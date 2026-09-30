@@ -21,4 +21,4 @@
 - 日常 `doctor`（`wvd-present`）与 `doctor --provision`
 - `run` 子命令（license → download → decrypt → mux）
 - CLI 迁入独立项目目录；pytest 12 passed；日常 doctor 绿
-- 独立 Git 仓：项目根 `.git`，Private 远端待首提后登记
+- 独立 Git 仓：`73ad0d1` 已推 `https://github.com/Facetomyself/widevine-l3-download`（Private）
