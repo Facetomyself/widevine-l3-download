@@ -1,0 +1,15 @@
+{
+  "name": "ktv-smart-jp",
+  "site": "https://ktv-smart.jp/",
+  "referer": "https://ktv-smart.jp/",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:151.0) Gecko/20100101 Firefox/151.0",
+  "license_url": "https://wvks.videomarket.jp/?ticket={ticket}",
+  "proxy": "http://127.0.0.1:7897",
+  "notes": [
+    "Ticket is short-lived; capture from the rented playback page performance entries.",
+    "Japan egress is required for pf-api / Akamai; non-JP IP returns errorCode 10003.",
+    "Pass --mpd so Widevine PSSH (edef8ba9) is selected; PlayReady PSSH yields E2006.",
+    "PlayReady LA_URL prks.videomarket.jp is a separate SOAP stack; this adapter stays on wvks.",
+    "Daily license uses the workspace CDM pointer (no Pixel). Do not use px-proxy -Action on."
+  ]
+}

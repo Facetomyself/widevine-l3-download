@@ -1,0 +1,71 @@
+{
+  "schema": "widevine-l3-runtime-lock.v1",
+  "tool": "widevine-l3",
+  "upstream": {
+    "keydive": {
+      "version": "3.0.6",
+      "license": "MIT",
+      "url": "https://github.com/hyugogirubato/KeyDive"
+    },
+    "pywidevine": {
+      "version": "1.9.0",
+      "url": "https://github.com/devine-dl/pywidevine"
+    },
+    "bento4": {
+      "version": "1.6.0-641",
+      "binary": "mp4decrypt 1.4"
+    },
+    "ffmpeg": {
+      "build": "N-126755-g52f05ac780-20260922",
+      "flavor": "BtbN win64-gpl"
+    }
+  },
+  "python": {
+    "extract": {
+      "venv": "workspace/widevine-l3-download/.venv-extract",
+      "keydive": "3.0.6",
+      "frida": "17.15.3",
+      "protobuf": "5.29.6",
+      "construct": "2.10.70"
+    },
+    "replay": {
+      "venv": "workspace/widevine-l3-download/.venv",
+      "pywidevine": "1.9.0",
+      "protobuf": "6.33.6",
+      "construct": "2.8.8"
+    }
+  },
+  "assets": {
+    "kalturaApk": {
+      "file": "assets/kaltura-device-info-release.apk",
+      "package": "com.kaltura.kalturadeviceinfo",
+      "sha256": "37d01c6af0a567951d39c3f806b7dfa8d6ac1a88617ed9b2129b62566b8a5418",
+      "source": "https://github.com/kaltura/kaltura-device-info-android/releases/download/t3/kaltura-device-info-release.apk"
+    },
+    "mp4decrypt": {
+      "file": "tools/bento4/bin/mp4decrypt.exe",
+      "sha256": "4bf6f374f8623af2142e7c5d4ec58c824f7cce19f8fcaac3e44041b215d81286"
+    },
+    "ffmpegZip": {
+      "archive": "storage/workspace-archive/2026-09-28/ktv-smart-jp-download/tools/ffmpeg.zip",
+      "sha256": "576ce558496dbf237dbc859a561e5240d59dc126baac921f59704d52260c060e"
+    }
+  },
+  "paths": {
+    "adb": "tools/adb/adb.exe",
+    "extractVenv": "workspace/widevine-l3-download/.venv-extract",
+    "replayVenv": "workspace/widevine-l3-download/.venv",
+    "ffmpeg": "tools/ffmpeg/bin/ffmpeg.exe",
+    "ffprobe": "tools/ffmpeg/bin/ffprobe.exe"
+  },
+  "networkRequired": false,
+  "installNetworkRequired": true,
+  "notes": [
+    "Never pip-install keydive or pywidevine into D:/reverse_ENV/.venv.",
+    "keydive and pywidevine cannot share a venv: construct Const() argument order changed between 2.8.8 and 2.10.70.",
+    "Default extract trigger is KeyDive -a web (Bitmovin DRM demo), not -a player GitHub download.",
+    "px-proxy -Action on is retired; do not set device global http_proxy for this tool.",
+    "Canonical source is this repository. reverse_ENV tools/widevine-l3 is a launcher.",
+    "Daily path is pixel-once-pc-daily: license/run read runtime/cdm-current.json. Device blobs stay in storage/cdm-devices/."
+  ]
+}

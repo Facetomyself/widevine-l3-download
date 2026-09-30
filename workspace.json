@@ -1,0 +1,100 @@
+{
+  "project": "widevine-l3-download",
+  "goal": "把 ktv-smart-jp-download 的实测管道和 KeyDive 开源用法抽成 reverse_ENV 内通用、本地化的 Widevine L3 工具，站点差异走适配器。",
+  "source": {
+    "archive": "D:/reverse_ENV/storage/workspace-archive/2026-09-28/ktv-smart-jp-download",
+    "article": "article/drm-content-acquisition/widevine-l3-video-download.md",
+    "upstream": "https://github.com/hyugogirubato/KeyDive"
+  },
+  "scope": {
+    "generic": ["cdm-extract", "pssh-select", "license-replay", "decrypt-mux", "pc-daily-run", "independent-git"],
+    "site-adapter": ["ktv-smart-jp / videomarket"],
+    "out_of_scope": ["desktop CDM dump", "CDM redistribution", "unauthorized content", "shared-wvd"]
+  },
+  "artifacts": {
+    "report": "workspace/widevine-l3-download/report.md",
+    "findings": "workspace/widevine-l3-download/findings.json",
+    "triage": "workspace/widevine-l3-download/triage.md"
+  },
+  "next": "await-ticket-for-run-canary",
+  "slices": [
+    {
+      "id": "recon-archive",
+      "skill": "reverse-coordinator",
+      "objective": "归档脚本、venv、工具与站点硬编码清单",
+      "status": "done",
+      "conclusion": "fact",
+      "evidence": ["workspace/widevine-l3-download/agent-notes/recon-archive.md"],
+      "handles": {},
+      "blocker": null
+    },
+    {
+      "id": "recon-keydive",
+      "skill": "search-layer",
+      "objective": "KeyDive 上游 CLI、版本、APK 下载行为与本地化缺口",
+      "status": "done",
+      "conclusion": "fact",
+      "evidence": ["workspace/widevine-l3-download/agent-notes/recon-keydive.md"],
+      "handles": {},
+      "blocker": null
+    },
+    {
+      "id": "recon-tools",
+      "skill": "reverse-coordinator",
+      "objective": "本仓 ffmpeg/bento4/adb/frida 与文档注册点",
+      "status": "done",
+      "conclusion": "fact",
+      "evidence": ["workspace/widevine-l3-download/agent-notes/recon-tools.md"],
+      "handles": {},
+      "blocker": null
+    },
+    {
+      "id": "impl-cli",
+      "skill": "reverse-coordinator",
+      "objective": "落地 tools/widevine-l3 通用 CLI 与隔离 venv",
+      "status": "done",
+      "conclusion": "fact",
+      "evidence": [
+        "workspace/widevine-l3-download/README.md",
+        "workspace/widevine-l3-download/widevine_l3.py",
+        "tools/widevine-l3/README.md"
+      ],
+      "handles": {},
+      "blocker": null
+    },
+    {
+      "id": "pc-only-cdm",
+      "skill": "search-layer",
+      "objective": "桌面 CDM / 模拟器 / 已有 .wvd 可行性",
+      "status": "done",
+      "conclusion": "fact",
+      "evidence": ["workspace/widevine-l3-download/agent-notes/pc-only-cdm.md"],
+      "handles": {},
+      "blocker": null
+    },
+    {
+      "id": "pc-only-playready",
+      "skill": "search-layer",
+      "objective": "Windows PlayReady 能否替代 wvks",
+      "status": "done",
+      "conclusion": "fact",
+      "evidence": ["workspace/widevine-l3-download/agent-notes/pc-only-playready.md"],
+      "handles": {},
+      "blocker": null
+    },
+    {
+      "id": "impl-pc-daily",
+      "skill": "reverse-coordinator",
+      "objective": "pixel-once-pc-daily：指针、doctor 分档、run 子命令",
+      "status": "done",
+      "conclusion": "fact",
+      "evidence": [
+        "workspace/widevine-l3-download/widevine_l3.py",
+        "workspace/widevine-l3-download/runtime/cdm-current.json",
+        "storage/cdm-devices/google-pixel6-33098/"
+      ],
+      "handles": {},
+      "blocker": null
+    }
+  ]
+}

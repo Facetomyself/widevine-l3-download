@@ -1,0 +1,12 @@
+# Isolated venvs only. Do not install into D:\reverse_ENV\.venv.
+# construct Const() argument order changed between 2.8.8 and 2.10.70,
+# so KeyDive and pywidevine cannot share a venv.
+#
+# .venv-extract (CDM extract):
+#   keydive==3.0.6 frida==17.15.3 protobuf==5.29.6 construct==2.10.70
+# .venv (license replay / download):
+#   pywidevine==1.9.0 protobuf==6.33.6 construct==2.8.8 requests==2.32.5
+keydive==3.0.6
+pywidevine==1.9.0
+frida==17.15.3
+requests==2.32.5

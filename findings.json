@@ -1,0 +1,83 @@
+{
+  "project": "widevine-l3-download",
+  "generated": "2026-09-30",
+  "findings": [
+    {
+      "id": "F1",
+      "title": "ktv scripts are site-bound; pipeline stages are generic",
+      "confidence": "high",
+      "evidence": "workspace/widevine-l3-download/agent-notes/recon-archive.md",
+      "redaction": {
+        "redacted": false,
+        "redaction_method": "none",
+        "raw_value_stored": false
+      }
+    },
+    {
+      "id": "F2",
+      "title": "KeyDive 3.0.6 -a player downloads Kaltura APK from GitHub unless docs/server/kaltura.apk exists",
+      "confidence": "high",
+      "evidence": "workspace/widevine-l3-download/agent-notes/recon-keydive.md",
+      "redaction": {
+        "redacted": false,
+        "redaction_method": "none",
+        "raw_value_stored": false
+      }
+    },
+    {
+      "id": "F3",
+      "title": "Proven extract trigger is -a web (Bitmovin), not Kaltura UI automation",
+      "confidence": "high",
+      "evidence": "article/drm-content-acquisition/widevine-l3-video-download.md",
+      "redaction": {
+        "redacted": false,
+        "redaction_method": "none",
+        "raw_value_stored": false
+      }
+    },
+    {
+      "id": "F4",
+      "title": "keydive protobuf<6 conflicts with pywidevine protobuf>=6.33 and angr; isolated venv required",
+      "confidence": "high",
+      "evidence": "workspace/widevine-l3-download/agent-notes/recon-tools.md",
+      "redaction": {
+        "redacted": false,
+        "redaction_method": "none",
+        "raw_value_stored": false
+      }
+    },
+    {
+      "id": "F5",
+      "title": "PlayReady PSSH on the same MPD yields license E2006; selector must keep edef8ba9",
+      "confidence": "high",
+      "evidence": "article/drm-content-acquisition/widevine-l3-video-download.md",
+      "redaction": {
+        "redacted": false,
+        "redaction_method": "none",
+        "raw_value_stored": false
+      }
+    },
+    {
+      "id": "F6",
+      "title": "Daily PC path is pixel-once-pc-daily; first ANDROID identity cannot be minted in Python",
+      "confidence": "high",
+      "evidence": "workspace/widevine-l3-download/agent-notes/pc-only-cdm.md",
+      "redaction": {
+        "redacted": false,
+        "redaction_method": "none",
+        "raw_value_stored": false
+      }
+    },
+    {
+      "id": "F7",
+      "title": "videomarket PlayReady LA_URL is prks SOAP, not wvks ticket; Windows MF CDM does not export keys",
+      "confidence": "high",
+      "evidence": "workspace/widevine-l3-download/agent-notes/pc-only-playready.md",
+      "redaction": {
+        "redacted": false,
+        "redaction_method": "none",
+        "raw_value_stored": false
+      }
+    }
+  ]
+}

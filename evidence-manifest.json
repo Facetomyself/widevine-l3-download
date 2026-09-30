@@ -1,0 +1,30 @@
+{
+  "_schema": "workspace-evidence-manifest-v1",
+  "project": "widevine-l3-download",
+  "updated": "2026-09-30",
+  "policy": "restricted-local; hashes only; no CDM private key / client_id bytes in git",
+  "inputs": [
+    {
+      "path": "storage/workspace-archive/2026-09-28/ktv-smart-jp-download",
+      "role": "source-archive"
+    },
+    {
+      "path": "storage/cdm-devices/google-pixel6-33098/google_pixel_6_19.0.1@av1a.240428.001_40303a05_33098_l3.wvd",
+      "size": 3456,
+      "sha256": "8f8cc343f99593b3d0c31a6736d5f04c22f4942d185347a981a994d9eca4ed58",
+      "role": "self-extracted-android-l3-wvd"
+    },
+    {
+      "path": "storage/cdm-devices/google-pixel6-33098/client_id.bin",
+      "size": 2255,
+      "sha256": "74c3f58ad8e54325469b985d782efcc78b9a411dfe79fa5156f979d89375f645",
+      "role": "self-extracted-client-id"
+    },
+    {
+      "path": "storage/cdm-devices/google-pixel6-33098/private_key.pem",
+      "size": 1675,
+      "sha256": "0068f6bef72adcc9ee89dccf924b932863a87634d36f45c20b56b17980d9cf5b",
+      "role": "self-extracted-rsa"
+    }
+  ]
+}
