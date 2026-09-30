@@ -71,7 +71,7 @@ def test_install_cdm_from_dir(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -
     source.mkdir()
     (source / "sample_l3.wvd").write_bytes(b"WVD\x00fixture")
     (source / "client_id.bin").write_bytes(b"cid")
-    (source / "private_key.pem").write_bytes(b"-----BEGIN PRIVATE KEY-----\n")
+    (source / "private_key.pem").write_bytes(b"fixture-rsa-placeholder\n")
 
     copied = install_cdm_from_dir(source, "google-pixel6-33098")
     assert copied["wvd"].is_file()
